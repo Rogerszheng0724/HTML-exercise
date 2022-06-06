@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--1.html-->
+        <title>My profile</title>
+        <script>alert("記得訂閱並開啟小鈴鐺")</script>
+        <!--2.html-->
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <!--3.html-->
+        <!--相對路徑-->
+        <img src="I.png" style = "position:relative;left:15px;top:10px" alt="我可可愛愛的照片" width="200" height="200">
+        <!--4.html-->
+        <button type="button" class = "time" onclick="Myfunction()">加我好友</button>
+        <!--5.html-->
+        <h2 id="magic" class="ciwas">可以得知更多資訊</h2>
+        <script>
+            function Myfunction(){
+                document.getElementById("magic").innerHTML="才不理你"
+            }
+        </script>
+        <!--6.html-->
+ <table border="4" class="first">
+    <thead style="background-color:lightcyan;">
+        <th>基本資訊</th><th>關於我</th><th>更多</th>
+    </thead>
+    <tbody style="background-color:wheat">
+        <tr>
+            <!--7.html-->
+            <th><span style="color: red;">5/20</span>出生</th>
+            <th>
+            <ul>
+                <!--8.html-->
+                <li>農曆生日跟<span style="color: blue;">城隍爺</span>同一天生</li>
+                <li>國曆跟拿破崙忌日同一天</li>
+            </ul>
+            </th>
+            <th>
+                <ol>
+                    <!--9.html-->
+                    <li>現居舊金山</li>
+                    <li id="area1">籃球可比肩Michael Jackson <p>還可以打爆爆哥o'neal</p></li>
+                    <li>棒球可以媲美 Justin Bieber</li>
+                </ol>
+            </th>
+        </tr>
+        <tr>
+            <th>自我介紹</th>
+            <th>筆名:星賴<hr>
+                綽號:小賴<hr>
+                英文名:Rogers <hr>
+                日文名:青峰日輝 <hr>
+                饒舌名:賴神aka那個詩人aka最不會喝酒的大學生aka南投周杰倫
+            </th>
+            <th>
+                <ul>
+                    <!--10.html-->
+                    <li><a href="https://www.youtube.com/watch?v=MAjY8mCTXWk&list=RD4j0Fgmsxr-o" target="_blank">新歌出爐</a></li>
+                    <!--11.html-->
+                    <li><marquee>保持帥哥</marquee></li>
+                    <li>名言是:An apple a day,keeps doctor away</li>
+                </ul>
+            </th>
+    </tbody>
+    
+    <table border="5" class="second">
+            <thead style="background-color:#FFE681;">
+                <th>我的寵物圖片</th><th>他們的愛好</th><th>更多</th>
+            </thead>
+            <tbody style="background-color: #aee1cd;">
+                <tr>
+                    <!--絕對路徑-->
+                    <th><img src="https://img.onl/mvjGur" alt="我家養的老鼠" width="150" height="150"></th>
+                    <th>
+                    <ul>
+                        <li>我是主人養的</li>
+                        <li>2021年9月24號出生</li>
+                        <li>體重950g</li>
+                        <li>我叫球球，但我比較喜歡叫暗黑巴哈姆特之怒</li>
+                    </ul>
+                    </th>
+                    <th>
+                        <ol>
+                            <li>我愛玩沙子</li>
+                            <li>我愛吃東西</li>
+                            <li>我不愛運動</li>
+                        </ol>
+                    </th>
+                </tr>
+                <tr>
+                    <!--相對路徑-->
+                    <th><img src="貓貓.jpg" alt="貓貓圖片" width="150" height="150"></th>
+                    <th>一隻叫周周，一隻叫杰倫</th>
+                    <th>
+                        <ul>
+                            <li>有事裝沒事</li>
+                            <li>沒事就是有事</li>
+                            <li id="area1">最喜歡跟鴨嘴獸泰瑞當朋友<p>特務P</p></li>
+                        </ul>
+                    </th>
+            </tbody>
+            <tfoot style="background-color: #D1Cdda;">
+                <th colspan="4"><center>沒事可以去IG 搜尋<!--12.html--><span style="color: brown;">cat_is_very_cute</span>追蹤一下</th>
+            </tfoot>
+            <div class="right">
+                <h1>自介小遊戲!!!!!!</h1>
+                <h4>Please enter a number(1-100)and click Go
+                </h4>
+                <h4>You can only try 10 times</h4>
+                <input id="guessnum" type="number">
+                <button onclick="myFunction()">Go</button>
+                <!--13.html-->
+                <br>
+                <h4 id ="demo"></h4>
+                <script>
+                    const luckynum = Math.floor(Math.random()*100)+1;
+                    const maxround = 10;
+                    let round = 1;
+                    let success = false;
+    
+                    function myFunction() {
+                        let input = document.getElementById("guessnum").value;
+                        let text;
+    
+                        if(success)
+                            text='You win!Please refresh this page and play again.';
+                        else if(round>=maxround)
+                            text='Game over!Try again.';
+                        else{
+                            if(input<1){
+                                text = 'Round'+round+'/'+maxround+'  Out of bounds.';
+                            }
+                            else if(input>luckynum){
+                                text = 'Round'+round+'/'+maxround+':Too big.('+input+'>lucky number)';
+                            }
+                            else if(input<luckynum){
+                                text = 'Round'+round+'/'+maxround+':Too small.('+input+'< lucky number)';
+                            }
+                            else{
+                                success = true;
+                                text = 'Round'+round+'/'+maxround+':沒錯的啦，答案是:'+luckynum+'!!!';
+                            }
+                            round=round+1;
+                        }
+                        document.getElementById("demo").innerHTML = text;
+                    }
+                </script>
+            </div>    
+    
+    
+        </table>
+    </body>
+   
+</html>
+<!--背景圖片來源https://zh.lovepik.com/image-401909818/cute-doodle-background.html-->
